@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sobre Mi - Bryan Historias Narrativas</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Estilos externos -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Bryan Historias Narrativas</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="libros.html">Libros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sobre-mi.html" class="active">Sobre Mi</a></li>
+            </ul>
+            <form id="search-form" class="search-form" action="#" method="get" aria-label="Buscar en el sitio">
+                <input type="text" name="q" placeholder="Buscar..." />
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-me">
+            <h2>Sobre Mi</h2>
+            <p>Soy Bryan, escritor y narrador apasionado por crear mundos llenos de misterio y aventura. Mi objetivo es transportar al lector a través de mis historias a lugares donde la imaginación no tiene límites.</p>
+            <p>Comencé este proyecto con la intención de compartir mis relatos y conectar con personas que disfruten de la narrativa profunda y envolvente.</p>
+            <p>Gracias por visitar mi página. ¡Espero que disfrutes de mis libros!</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.instagram.com/bryan_histotias_narrativas/profilecard/?igsh=bGhzZGRnNnAxc3Zq" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VaqAwSdJ93wNNyGH5v0x" target="_blank" aria-label="WhatsApp Canal de Difusión">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61567836819816&mibextid=ZbWKwL" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
+        <div class="correo-contacto">
+                <i class="fas fa-envelope"></i>
+            <a href="mailto:bryanhistoriasnarrativas@gmail.com">bryanhistoriasnarrativas@gmail.com</a>
+        </div>
+
+        <p>© 2025 Bryan Historias Narrativas. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+document.getElementById("search-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const searchTerm = document.getElementById("search-input").value.toLowerCase();
+    const books = document.querySelectorAll(".book-item");
+
+    books.forEach(book => {
+        const title = book.querySelector("h2").textContent.toLowerCase();
+        book.style.display = title.includes(searchTerm) ? "block" : "none";
+    });
+});
+</script>
+</body>
+</html>
